@@ -1,0 +1,29 @@
+# Yield successive n-sized 
+# chunks from l. 
+def divide_chunks(l, n): 
+      
+    # looping till length l 
+    for i in range(0, len(l), n):  
+        yield l[i:i + n]
+
+
+def merge_the_tools(string, k):
+    # your code goes here
+    ld=[]
+    for i in string:
+        ld.append(i)
+    x = list(divide_chunks(ld, k)) 
+    #print(x)
+    lst={}
+    for m in x:
+        unique=[]
+        for f in m:
+            if f not in unique:
+                unique.append(f)
+        #print(unique)
+        ad=''
+        for o in unique:
+             ad=ad+o
+        print(ad)
+            
+if __name__ == '__main__':
